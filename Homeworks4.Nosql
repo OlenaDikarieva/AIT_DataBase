@@ -1,0 +1,33 @@
+-- Задача 1. Вывести имена юзеров не из France
+db.users.find(
+    { country: {$ne: 'France'} }, // filter
+    { fullname: 1, _id: 0 } // projection
+)
+-- Задача 2. Добавить несколько реакций на треки
+db.reactions.insertMany([
+    { track_id: 1, author_id: 1, value: 3 },
+    { track_id: 1, author_id: 2, value: 4 },
+    { track_id: 1, author_id: 3, value: 5 },
+    { track_id: 2, author_id: 5, value: 5 },
+    { track_id: 2, author_id: 1, value: 3 },
+    { track_id: 2, author_id: 4, value: 5 },
+    { track_id: 2, author_id: 1, value: 4 },
+    { track_id: 3, author_id: 2, value: 5 },
+    { track_id: 4, author_id: 2, value: 5 },
+    { track_id: 5, author_id: 2, value: 5 },
+    { track_id: 6, author_id: 2, value: 5 }
+])
+-- Задача 3. Вывести названия треков продолжительностью от 1 до 10 мин
+db.tracks.find(
+    {duration_secs: { $gte: 1 * 60, $lte: 10 * 60 }}, // filter
+    { title: 1, _id: 0 }
+)
+-- Задача 4. Вывести треки юзера 4
+db.tracks.find(
+    {author_id: 4} // filter
+)
+
+-- Задача 5. С помощью инструмента онлайн-проектирования описать 
+БД music (юзеры, треки, реакции, плейлисты)
+
+https://dbdiagram.io/d/musik-65311faeffbf5169f00728be
