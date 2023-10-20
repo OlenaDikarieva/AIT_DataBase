@@ -5,17 +5,17 @@ db.users.find(
 )
 -- Задача 2. Добавить несколько реакций на треки
 db.reactions.insertMany([
-    { track_id: 1, author_id: 1, value: 3 },
-    { track_id: 1, author_id: 2, value: 4 },
-    { track_id: 1, author_id: 3, value: 5 },
-    { track_id: 2, author_id: 5, value: 5 },
-    { track_id: 2, author_id: 1, value: 3 },
-    { track_id: 2, author_id: 4, value: 5 },
-    { track_id: 2, author_id: 1, value: 4 },
-    { track_id: 3, author_id: 2, value: 5 },
-    { track_id: 4, author_id: 2, value: 5 },
-    { track_id: 5, author_id: 2, value: 5 },
-    { track_id: 6, author_id: 2, value: 5 }
+    { track_id: 1, author_id: 1, reaction: 3 },
+    { track_id: 1, author_id: 2, reaction: 4 },
+    { track_id: 1, author_id: 3, reaction: 5 },
+    { track_id: 2, author_id: 5, reaction: 5 },
+    { track_id: 2, author_id: 1, reaction: 3 },
+    { track_id: 2, author_id: 4, reaction: 5 },
+    { track_id: 2, author_id: 1, reaction: 4 },
+    { track_id: 3, author_id: 2, reaction: 5 },
+    { track_id: 4, author_id: 2, reaction: 5 },
+    { track_id: 5, author_id: 2, reaction: 5 },
+    { track_id: 6, author_id: 2, reaction: 5 }
 ])
 -- Задача 3. Вывести названия треков продолжительностью от 1 до 10 мин
 db.tracks.find(
